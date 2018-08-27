@@ -13,7 +13,7 @@
                 <table>
                     <tr>
                         <td>
-                            <input type="text" name="result" placeholder="0" readonly>
+                            <input type="text" name="result" id="result" placeholder="0" readonly>
                         </td>
                     </tr>
                     <tr>
@@ -45,13 +45,13 @@
                             <button type = "button" onclick="number(value)" value="1">1</button>
                             <button type = "button" onclick="number(value)" value="2">2</button>
                             <button type = "button" onclick="number(value)" value="3">3</button>
-                            <button type = "button" onclick="evalua()">=</button>
+                            <button type = "button" onclick="wynik()">=</button>
                         </td> 
                     </tr>
                     <tr>
                         <td id="zeroSign">
                             <button type = "button" onclick="number(value)" value="0" id="zeroSign">0</button>
-                            <button type = "button" onclick="oper(value)" value=",">.</button>
+                            <button type = "button" onclick="oper(value)" value=".">.</button>
                         </td>
                     </tr>
 
@@ -60,19 +60,32 @@
         </main>
 
         <script>
-            function number(value){
-                document.calculator.result.value += value;
+
+            function number(value) {
+                document.getElementById("result").value += value;
             }
-            function cle(value){
-                document.calculator.result.value = value;
-            }
-            function evalua(){
-                document.calculator.result.value = eval(document.calculator.result.value);
-            }
+
             function oper(value) {
-                document.calculator.result.value = document.calculator.result.dodawanie;
+                var result = document.getElementById("result");
+                if (result.value.length !== 0) {
+                    var lastChar = result.value.slice(result.value.length-1);
+                    var re = /[0-9]/;
+                    if (lastChar.match(re) !== null) {
+                        result.value += value;
+                    }
+                }
             }
-            
+
+            function wynik() {
+                if (document.getElementById("result").value.length !== 0) {
+                document.getElementById("result").value = eval(document.getElementById("result").value);
+                }
+            }
+
+            function cle() {
+                document.getElementById("result").value = "";
+            }
+
         </script>
 
     </body>
