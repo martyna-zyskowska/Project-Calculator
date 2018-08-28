@@ -51,7 +51,7 @@
                     <tr>
                         <td id="zeroSign">
                             <button type = "button" onclick="number(value)" value="0" id="zeroSign">0</button>
-                            <button type = "button" onclick="oper(value)" value=".">.</button>
+                            <button type = "button" onclick="coma(value)" value=".">.</button>
                         </td>
                     </tr>
 
@@ -69,9 +69,22 @@
                 var result = document.getElementById("result");
                 if (result.value.length !== 0) {
                     var lastChar = result.value.slice(result.value.length-1);
-                    var re = /[0-9]/;
-                    if (lastChar.match(re) !== null) {
+                    var regularExpression = /[0-9]/;
+                    var re = /^(\+|-|\*|\/|=|>|<|>=|<=|&|\||%|!|\^|\(|\))$/;
+                    if (lastChar.match(regularExpression) !== null) {
                         result.value += value;
+                    }
+                    else if (lastChar.match(re) !== null) {
+                        document.getElementById("result").value = document.getElementById("result").value.slice(0, -1) + value;
+                    }
+                }
+            }
+
+            function coma(value) {
+                if (document.getElementById("result").value.length !== 0) {
+                    var regularExpression = /[0-9]/;
+                    if (result.value.slice(result.value.length-1).match(regularExpression) !== null) {
+                            document.getElementById("result").value += value; 
                     }
                 }
             }
