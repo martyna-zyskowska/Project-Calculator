@@ -84,14 +84,35 @@
                 if (document.getElementById("result").value.length !== 0) {
                     var regularExpression = /[0-9]/;
                     if (result.value.slice(result.value.length-1).match(regularExpression) !== null) {
-                            document.getElementById("result").value += value; 
+                        var breaki = document.getElementById("result").value.split(/(\+|-|\*|\/|=|&|\||%|\(|\))/); // dobre
+                        if (breaki[0].indexOf('.') !== 1) {
+                            document.getElementById("result").value += value;
+                        } 
+                        else if (breaki[2].indexOf('.') !== 1) {
+                            document.getElementById("result").value += value;
+                        } 
+                        else if (breaki[4].indexOf('.') !== 1) {
+                            document.getElementById("result").value += value;
+                        } 
+                        else if (breaki[6].indexOf('.') !== 1) {
+                            document.getElementById("result").value += value;
+                        } 
                     }
                 }
             }
 
+            // function coma(value) {
+            //     if (document.getElementById("result").value.length !== 0) {
+            //         var regularExpression = /[0-9]/;
+            //         if (result.value.slice(result.value.length-1).match(regularExpression) !== null) {
+            //                 document.getElementById("result").value += value; 
+            //         }
+            //     }
+            // }
+
             function wynik() {
                 if (document.getElementById("result").value.length !== 0) {
-                document.getElementById("result").value = eval(document.getElementById("result").value);
+                    document.getElementById("result").value = eval(document.getElementById("result").value);
                 }
             }
 
