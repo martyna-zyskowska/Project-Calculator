@@ -34,7 +34,7 @@ function oper(value) {
         result.value += value;
      }
      else if (lastChar.match(re) !== null) {
-        document.getElementById("result").value = document.getElementById("result").value.slice(0, -1) + value;
+        result.value = result.value.slice(0, -1) + value;
      }
   }
 }
