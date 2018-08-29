@@ -41,14 +41,14 @@ function oper(value) {
 ```
 
 ## Features
-List of features ready and TODOs for future development
+#### List of features ready and TODOs for future development
 * Mathematical operations are working as expected
 * Results of operations are correct (with the use of mathematical order of operations)
 * Operators cannot be entered more than once if the last character is not a number
 * if the user changes his or her mind and decide to change the operator, the calculator will replace the last character (for example from "+" to "-")
 * Decimal point or operators cannot be enterd if the result field is empty
 
-To-do list:
+#### To-do list:
 * Decimal point can be only provided once in one string
 * Evaluation after every operation (block mathematical order of operations)
 ## Contributing
