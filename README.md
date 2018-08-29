@@ -54,7 +54,7 @@ function oper(value) {
 ## Contributing
 Contributions to the project library are welcome. Please note the following guidelines before submitting your pull request:
  - Follow [JS coding](https://developer.mozilla.org/bm/docs/Web/JavaScript/Guide) standards
- - Write tests for new functions and added featues.
+ - Write tests for new functions and added featues
 ## License
 Copyright 2018 Martyna Zyskowska
 ## Author
