@@ -13,7 +13,7 @@ The project is centered on the design and implementation of a simple calculator 
 ## General Info
 The simple calculator project is focused on numbers and arithmetics operations. The end result of the calculator is to provide a correct result of mathematical operation.
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![calc_img](./calc_img.png)
 ## Technologies
 Project is created with:
 - HTML5
